@@ -93,7 +93,6 @@ for resource in resources:
                     if util['resourceId'] == resource['id']:
                         resource['utilizationMinutes'] += util['utilizationMinutes']
             elif task['utilizationMinutes']:
-                # Depends on task work time
                 resource['utilizationMinutes'] += task['utilizationMinutes']
 
         # If last task page
