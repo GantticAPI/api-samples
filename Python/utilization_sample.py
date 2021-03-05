@@ -92,9 +92,9 @@ for resource in resources:
                 for util in task['resourceUtilizationMinutes']:
                     if util['resourceId'] == resource['id']:
                         resource['utilizationMinutes'] += util['utilizationMinutes']
-            elif task['resourceUtilizationPercent']:
+            elif task['utilizationMinutes']:
                 # Depends on task work time
-                resource['utilizationMinutes'] += 0
+                resource['utilizationMinutes'] += task['utilizationMinutes']
 
         # If last task page
         if task_page == task_json['pageCount']:
